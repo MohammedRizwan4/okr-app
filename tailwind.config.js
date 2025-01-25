@@ -11,7 +11,7 @@ export default {
                 primary: "#e8dab2",
                 secondary: "#dd6e42",
                 accent: "#4f6d7a",
-                dark: "#333333"
+                dark: "#030712"
             },
             fontFamily: {
             }

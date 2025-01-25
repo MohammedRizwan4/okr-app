@@ -1,0 +1,141 @@
+{
+  "objectives": [
+    {
+      "id": "1",
+      "title": "Improve Website Performance",
+      "keyResults": [
+        {
+          "title": "Reduce page load time to under 2 seconds",
+          "initialValue": 5,
+          "currentValue": 3,
+          "targetValue": 2,
+          "metric": "Seconds"
+        },
+        {
+          "title": "Optimize images and assets",
+          "initialValue": 0,
+          "currentValue": 80,
+          "targetValue": 100,
+          "metric": "Percentage"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Enhance Customer Satisfaction",
+      "keyResults": [
+        {
+          "title": "Increase customer satisfaction score to 90%",
+          "initialValue": 75,
+          "currentValue": 85,
+          "targetValue": 90,
+          "metric": "Percentage"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Expand Sales Team",
+      "keyResults": [
+        {
+          "title": "Hire 10 new sales representatives",
+          "initialValue": 0,
+          "currentValue": 5,
+          "targetValue": 10,
+          "metric": "People"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Increase User Engagement",
+      "keyResults": [
+        {
+          "title": "Achieve 50% increase in active users",
+          "initialValue": 1000,
+          "currentValue": 1200,
+          "targetValue": 1500,
+          "metric": "Users"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Optimize Mobile Experience",
+      "keyResults": [
+        {
+          "title": "Achieve a mobile usability score of 95%",
+          "initialValue": 80,
+          "currentValue": 90,
+          "targetValue": 95,
+          "metric": "Percentage"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Improve Cybersecurity",
+      "keyResults": [
+        {
+          "title": "Reduce security vulnerabilities by 80%",
+          "initialValue": 0,
+          "currentValue": 40,
+          "targetValue": 80,
+          "metric": "Percentage"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Increase Brand Awareness",
+      "keyResults": [
+        {
+          "title": "Gain 20,000 social media followers",
+          "initialValue": 5000,
+          "currentValue": 10000,
+          "targetValue": 20000,
+          "metric": "Followers"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Develop AI Chatbot",
+      "keyResults": [
+        {
+          "title": "Complete chatbot MVP",
+          "initialValue": 0,
+          "currentValue": 60,
+          "targetValue": 100,
+          "metric": "Percentage"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Enhance Employee Training",
+      "keyResults": [
+        {
+          "title": "Conduct 5 training workshops",
+          "initialValue": 0,
+          "currentValue": 2,
+          "targetValue": 5,
+          "metric": "Workshops"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Reduce Customer Churn Rate",
+      "keyResults": [
+        {
+          "title": "Reduce churn rate to 5%",
+          "initialValue": 10,
+          "currentValue": 7,
+          "targetValue": 5,
+          "metric": "Percentage"
+        }
+      ]
+    }
+  ]
+}
