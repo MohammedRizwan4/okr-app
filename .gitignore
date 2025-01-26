@@ -1,4 +1,12 @@
 # Logs
+
+.env
+.env.local
+.env.development
+.env.production
+.env.*
+
+
 logs
 *.log
 npm-debug.log*

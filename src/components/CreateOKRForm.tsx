@@ -63,7 +63,7 @@ const CreateOKRForm = () => {
             });
     }
 
-// please remove p-6
+    // Doubt: remove p-6
     return <div className="p-10 dark:bg-dark w-full h-full flex items-start justify-center">
         <div className=" max-w-3xl w-full mt-10 border dark:border-gray-700 rounded-lg px-6 pt-2 pb-6 dark:text-white">
             <div className="mt-3 mb-5 flex items-center justify-between">
