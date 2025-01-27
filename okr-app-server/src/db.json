@@ -125,15 +125,15 @@
       ]
     },
     {
-      "id": "30943eed-1c5d-4387-9f0a-f72189287f5b",
-      "title": "New OKR",
+      "id": "10",
+      "title": "Reduce Customer Churn Rate",
       "keyResults": [
         {
-          "title": "Hello world",
-          "initialValue": "1",
-          "currentValue": "2",
-          "targetValue": "9",
-          "metric": "Hello"
+          "title": "Reduce churn rate to 5%",
+          "initialValue": 10,
+          "currentValue": 7,
+          "targetValue": 5,
+          "metric": "Percentage"
         }
       ]
     }
