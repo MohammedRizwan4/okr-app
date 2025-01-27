@@ -12,7 +12,7 @@ const DisplayOKRs = ({objectives, setObjectives}: DisplayOKRsPropType) => {
 
 
     useEffect(() => {
-        fetch("http://localhost:3000/objectives")
+        fetch("http://localhost:3003/objectives")
             .then((res) => res.json())
             .then(data => {
                 console.log(data)
