@@ -22,7 +22,7 @@ export class ObjectivesService {
         };
     }
 
-    fetchAll() {
+        fetchAll() {
         return Array.from({length: 9}, () => this.generateObjective());
     }
 }

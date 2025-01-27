@@ -1,7 +1,7 @@
 import express from 'express';
-import {ObjectivesService} from "./services/objectives.service.js";
-import {ObjectivesController} from "./controllers/objectives.controller.js";
 import cors from 'cors'
+import {router} from "./routers/objectives.router.js";
+
 const app = express();
 const PORT = 3003;
 
@@ -12,12 +12,7 @@ app.use(cors(
     }
 ))
 
-const objectiveService = new ObjectivesService();
-const objectiveController = new ObjectivesController(objectiveService);
-
-app.get("/objectives", (req, res) => {
-    return objectiveController.fetchAll(res);
-})
+app.use("/objectives", router);
 
 app.listen(PORT, () => {
     console.log(`Server is running on PORT: ${PORT}`)
