@@ -14,17 +14,18 @@ datasource db {
 }
 
 model Objective {
-    id  Int @default(autoIncrement()) @id
+    id  Int @id @default(autoincrement())
     title String
     key_results KeyResult[]
 }
 
 model KeyResult {
-    id Int
+    id Int @id @default(autoincrement())
     title String
     initial_value Int
     current_value Int
     target_value Int
     metric String
-    objective Objective
+    objective Objective @relation(fields: [objective_id], references: [id])
+    objective_id Int
 }
