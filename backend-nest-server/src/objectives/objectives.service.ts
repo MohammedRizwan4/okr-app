@@ -8,9 +8,7 @@ export class ObjectivesService {
 
   create(objectiveDto: ObjectiveDto) {
     return this.prismaService.objective.create({
-      data: { ...objectiveDto, keyResults: {
-
-        } },
+      data: objectiveDto,
     });
   }
 
