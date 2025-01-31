@@ -1,19 +1,33 @@
-import {Body, Controller, Get, Post} from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { ObjectivesService } from './objectives.service';
-import {DatabaseService} from "../database/database.service";
-import {CreateObjectiveDto} from "./create-objective.dto";
+import { ObjectiveDto } from './dto/objective.dto';
 
 @Controller('objectives')
 export class ObjectivesController {
   constructor(private readonly objectivesService: ObjectivesService) {}
 
-  @Get()
-  getAll() {
-    return this.objectivesService.getAll();
+  @Post()
+  create(@Body() createObjectiveDto: ObjectiveDto) {
+    return this.objectivesService.create(createObjectiveDto);
   }
 
-  @Post()
-  create(@Body() okr: CreateObjectiveDto){
-    return this.objectivesService.create(okr);
+  @Get()
+  findAll() {
+    return this.objectivesService.findAll();
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.objectivesService.findOne(+id);
+  }
+
+  @Patch(':id')
+  update(@Param('id') id: string, @Body() objectiveDto: ObjectiveDto) {
+    return this.objectivesService.update(+id, objectiveDto);
+  }
+
+  @Delete(':id')
+  remove(@Param('id') id: string) {
+    return this.objectivesService.remove(+id);
   }
 }
