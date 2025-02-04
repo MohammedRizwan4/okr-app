@@ -20,7 +20,9 @@ describe('ObjectivesService', () => {
 
   describe('findAll', () => {
     it('should call findMany method from Prisma Service', async () => {
+      // act
       await service.findAll();
+      //assert
       expect(prismaService.objective.findMany).toHaveBeenCalled();
     });
 
@@ -39,6 +41,36 @@ describe('ObjectivesService', () => {
       const response = await service.findAll();
       //Assert
       expect(response).toEqual(dummyObjectives);
+    });
+  });
+
+  describe('create', () => {
+    let objective;
+    beforeAll(() => {
+      objective = {
+        title: 'dummy title',
+      };
+    });
+    it('should call create method of prisma service with given objective', async () => {
+      //arrange
+
+      // act
+      await service.create(objective);
+      //assert
+      expect(prismaService.objective.create).toHaveBeenCalled();
+    });
+
+    it('should create objective and return objective', async () => {
+      //arrange
+      const dummyObjective = {
+        id: 1,
+        title: 'dummy title',
+      };
+      prismaService.objective.create.mockResolvedValue(dummyObjective);
+      //act
+      const response = await service.create(objective);
+      //assert
+      expect(response).toEqual(dummyObjective);
     });
   });
 });
