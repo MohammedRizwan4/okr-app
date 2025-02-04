@@ -127,4 +127,30 @@ describe('ObjectivesService', () => {
       expect(response).toEqual(objective);
     });
   });
+
+  describe('remove', () => {
+    let objective: ObjectiveDto & { id: number };
+    beforeAll(() => {
+      objective = {
+        id: 1,
+        title: 'dummy title',
+      };
+    });
+
+    it('should call remove method of prisma service', async () => {
+      //act
+      await service.remove(1)
+      //assert
+      expect(prismaService.objective.delete).toHaveBeenCalled();
+    });
+
+    it('should remove objective that have same id', async () => {
+      //arrange
+      prismaService.objective.delete.mockResolvedValue(objective);
+      //act
+      const response = await service.remove(1);
+      //assert
+      expect(response).toEqual(objective);
+    });
+  });
 });
