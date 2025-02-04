@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { ObjectivesService } from './objectives.service';
 import { mockDeep } from 'jest-mock-extended';
 import { PrismaService } from '../prisma/prisma.service';
-import {ObjectiveDto} from "./dto/objective.dto";
+import { ObjectiveDto } from './dto/objective.dto';
 
 describe('ObjectivesService', () => {
   let service: ObjectivesService;
@@ -74,15 +74,15 @@ describe('ObjectivesService', () => {
       expect(response).toEqual(dummyObjective);
     });
   });
-  
-  describe("findOne", () => {
-    let objective: ObjectiveDto & {id: number};
+
+  describe('findOne', () => {
+    let objective: ObjectiveDto & { id: number };
     beforeAll(() => {
       objective = {
         id: 1,
-        title: "dummy Title"
-      }
-    })
+        title: 'dummy Title',
+      };
+    });
     it('should call findUnique method of prisma service with given id', async () => {
       //arrange
 
@@ -92,7 +92,7 @@ describe('ObjectivesService', () => {
       expect(prismaService.objective.findUnique).toHaveBeenCalled();
     });
 
-    it('should find particular objective with given Id',async  () => {
+    it('should find particular objective with given Id', async () => {
       //arrange
       prismaService.objective.findUnique.mockResolvedValue(objective);
       //act
@@ -100,5 +100,31 @@ describe('ObjectivesService', () => {
       //assert
       expect(response).toEqual(objective);
     });
-  })
+  });
+
+  describe('update', () => {
+    let objective: ObjectiveDto & { id: number };
+    beforeAll(() => {
+      objective = {
+        id: 1,
+        title: 'dummy updated title',
+      };
+    });
+
+    it('should call update method of prisma service with id and updated objective', async () => {
+      // act
+      await service.update(1, objective);
+      //assert
+      expect(prismaService.objective.update).toHaveBeenCalled();
+    });
+
+    it('should update objective with given id and updated value and return that objective', async () => {
+      //arrange
+      prismaService.objective.update.mockResolvedValue(objective);
+      //act
+      const response = await service.update(1, objective);
+      //assert
+      expect(response).toEqual(objective);
+    });
+  });
 });
